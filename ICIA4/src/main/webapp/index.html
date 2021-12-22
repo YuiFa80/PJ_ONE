@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Main Page :: Static</title>
+<script src="resources/resource.js">
+	
+</script>
+
+<script>
+	/* 1. 서버와의 통신제어
+	 *     - HTML 개체의 제어 : form의 동적 생성
+	 * 2. 데이터의 유효성 검사
+	 * 3. AJAX + Json
+	 */
+
+	function authentication() {
+		/* 1. HTML 개체와의 연결 : name, id 속성 */
+		const form = document.getElementsByName("login")[0];
+		/* 2. 사용자 데이터의 수집 */
+		const userData = [ document.getElementsByName("seCode")[0],
+				document.getElementsByName("emCode")[0],
+				document.getElementsByName("emPassword")[0] ];
+		const message = [ "상점코드 입력", "직원코드 입력", "패스워드 입력" ];
+
+		/* 3. 유효성 검사 */
+
+		for (let index = 0; index < userData.length; index++) {
+			if (!isEmpty(userData[index])) {
+				alert(message[index]);
+				return;
+			}
+
+		}
+		/* 4. 서버로 전송 */
+		form.submit();
+	}
+</script>
+<link rel="stylesheet" type="text/css" href="resources/common.cs" />
+<style>
+table {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 52%
+}
+
+td {
+	text-align: center;
+	border: 1px solid #B266FF
+}
+
+input {
+	width: 80%;
+	height: 48px;
+	text-align: center;
+	font-size: 15pt;
+}
+
+#main {
+	font-size: 15pt;
+	padding: 10px;
+	background-color: #CC99FF;
+	color: #FFFFFF;
+	font-weight: 800;
+}
+
+#btn {
+	background-color: #CC99FF;
+	border: 1px solid #B266FF;
+	font-weight: 800;
+}
+
+.title {
+	height: 80px;
+}
+
+.line {
+	height: 50px;
+}
+</style>
+</head>
+
+<body>
+	<form name= "login" action="Access" method="post">
+		<table width="50%">
+			<tr>
+				<td colspan='2' id="main">Main Page</td>
+			</tr>
+
+			<tr>
+				<td colspan='2'><input type="text" name="seCode"
+					placeholder="Store Code" /></td>
+			</tr>
+
+			<tr>
+				<td colspan='2'><input type="text" name="emCode"
+					placeholder="Employee Code" /></td>
+			</tr>
+
+			<tr>
+				<td colspan='2'><input type="password" name="emPassword"
+					placeholder="Password" /></td>
+			</tr>
+
+			<tr>
+				<td colspan='2'><input type="button" id="btn" value="로그인"
+					onClick="authentication()" /></td>
+			</tr>
+		</table>
+	</form>
+	
+	<input type = "number" value = "1" min="1" max="100"/>
+	<input type = "range" name = "range" min="0" max="10"/>
+	<input type = "color" name = "color" value = "#000000" />
+	<input type = "date" name="" min="2021-12-22" max = "2021-12-30" />
+	<input type = "time" name =""/>
+	<input type = "week" name= "obj" />
+	<input type = "button" value = "값 확인" onClick = "valueCheck()"/>
+	
+	<script>
+	function valueCheck(){
+		const obj = doucment.getElementsByName("color")[0];
+		alert(obj.value);
+	}
+	</script>
+</body>
+</html>
+

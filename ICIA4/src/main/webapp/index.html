@@ -20,9 +20,9 @@
 		const form = document.getElementsByName("login")[0];
 		/* 2. 사용자 데이터의 수집 */
 		const userData = [ document.getElementsByName("seCode")[0],
-				document.getElementsByName("emCode")[0],
+			
 				document.getElementsByName("emPassword")[0] ];
-		const message = [ "상점코드 입력", "직원코드 입력", "패스워드 입력" ];
+		const message = [ "아이디 입력", "패스워드 입력" ];
 
 		/* 3. 유효성 검사 */
 
@@ -37,50 +37,7 @@
 		form.submit();
 	}
 </script>
-<link rel="stylesheet" type="text/css" href="resources/common.cs" />
-<style>
-table {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 52%
-}
 
-td {
-	text-align: center;
-	border: 1px solid #B266FF
-}
-
-input {
-	width: 80%;
-	height: 48px;
-	text-align: center;
-	font-size: 15pt;
-}
-
-#main {
-	font-size: 15pt;
-	padding: 10px;
-	background-color: #CC99FF;
-	color: #FFFFFF;
-	font-weight: 800;
-}
-
-#btn {
-	background-color: #CC99FF;
-	border: 1px solid #B266FF;
-	font-weight: 800;
-}
-
-.title {
-	height: 80px;
-}
-
-.line {
-	height: 50px;
-}
-</style>
 </head>
 
 <body>
@@ -91,18 +48,13 @@ input {
 			</tr>
 
 			<tr>
-				<td colspan='2'><input type="text" name="seCode"
-					placeholder="Store Code" /></td>
+				<td colspan='2'><input type="text" name="userId"
+					placeholder="User Id" /></td>
 			</tr>
 
 			<tr>
-				<td colspan='2'><input type="text" name="emCode"
-					placeholder="Employee Code" /></td>
-			</tr>
-
-			<tr>
-				<td colspan='2'><input type="password" name="emPassword"
-					placeholder="Password" /></td>
+				<td colspan='2'><input type="password" name="userPassword"
+					placeholder="User Password" /></td>
 			</tr>
 
 			<tr>
